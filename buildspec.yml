@@ -4,7 +4,7 @@ phases:
       commands:
       - TAG="$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
       - sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY_URI:$TAG"'@' kube-manifests/deployment.yml
-      - aws ecr get-login-password | docker login --username AWS --password-stdin 173655021709.dkr.ecr.ap-southeast-1.amazonaws.com/eks-repo
+      - aws ecr get-login-password | docker login --username AWS --password-stdin 889175271358.dkr.ecr.ap-southeast-1.amazonaws.com/repo-ecr
       - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
