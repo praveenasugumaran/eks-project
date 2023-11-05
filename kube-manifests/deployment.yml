@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: tarzan
+ labels:
+  app: tarzan
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: tarzan
+ template:
+  metadata:
+   labels:
+    app: tarzan
+  spec:
+   containers:
+    - name: tarzan
+      image: CONTAINER_IMAGE
+      imagePullPolicy: Always
+      ports:
+      - containerPort: 3000
+
+
+
+
+
+
+
